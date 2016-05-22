@@ -278,6 +278,59 @@ Voilà le comportement détaillé du code :
 
 Classe non?
 
+####Les promises.
+Le JavaScript est un langage qui est très performant dans un contexte d’appels non-bloquant.
+Toutes les fonctions JavaScript sont asynchrones mis à part deux fonctions. Une fonction permettant de réaliser des appels AJAX synchrones créés par Microsoft et la fonction `window.alert`
+
+Coder de manière à rendre le code asynchrone permet de faire des applications plus performantes (multi-taches), moins couteuses en énergie et surtout plus agréable pour l’éxperience utilisateur.
+
+Puisque sur JavaScript et aussi Node.js les appels sont «non-bloquants» alors on doit apprendre à créer des méthodes qui seront appellés de manière asynchrones mais qui seront interfaçables avec des chaînes de dépendances.
+
+Pour réaliser une chaîne de dépendance, on aura tendance à développer un code comme celui-ci :
+
+```javascript
+step1(function (value1) {
+    step2(value1, function(value2) {
+        step3(value2, function(value3) {
+            step4(value3, function(value4) {
+                // Do something with value4
+            });
+        });
+    });
+});
+```
+
+De plus,
+
+Le problème est que ce code utilise beaucoup de niveau d’imbrication (nested statement) et qu’il devient très peu lisible.
+On appelle ce problème «The Pyramid of doom» https://www.wikiwand.com/en/Pyramid_of_doom_(programming)
+
+C’est pourquoi Kris Kowal à inventé une bibliothèque JavaScript nommée «Q». https://github.com/kriskowal/q
+Avec la library «Q» qui est l’un des moyens d’implémenter des promises, nous programmerons de la sorte : 
+
+```javascript
+Q.fcall(promisedStep1)
+.then(promisedStep2)
+.then(promisedStep3)
+.then(promisedStep4)
+.then(function (value4) {
+    // Do something with value4
+})
+.catch(function (error) {
+    // Handle any error from all above steps
+})
+.done();
+```
+
+Nous pouvons utiliser aussi le système de promise directement implémentée dans les navigateurs car normée par ECMAScript.
+Une API codées avec des callback peut être traduite en application complètement asynchrone graçe à une bibliothèque JavaScript nommée BlueBird.
+
+En conclusion, les promises permettent
+
+* De concevoir des appels asynchrones puisque les fonctions peuvent être des callback.
+* De concevoir un code avec un niveau d’imbrication faible.
+* De catcher les erreurs de manière simple.
+
 ###Tips & bonnes pratiques.
 
 ####Le wrapper de fonctionnalitées parfait.
