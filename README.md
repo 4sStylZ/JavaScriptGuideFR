@@ -1,5 +1,5 @@
 # JavaScriptTutorialFR
-JavaScriptTutorialFR ≥ console.log('coin coint');
+JavaScriptTutorialFR ≥ console.log('coin coin');
 
 ###Un peu d’histoire.
 JavaScript a été inventé par NetScape dans le but de créer un langage de script inspiré de Java mais rendu plus simple en syntaxe. Il a été placé dans le navigateur en 1995. Microsoft a tenté de concurencer ce langage de script avec JScript. Aujourd’hui encore JavaScript est une marque.
@@ -216,7 +216,7 @@ Les avantages :
 
 Un exemple :
 
-```
+```javascript
 (function (local_arg) {
    // anonymous function
    console.log(local_arg);
@@ -284,7 +284,7 @@ Classe non?
 2) On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
 3) On utilise la norme ECMAScript5 avec `use script`;
 
-```JavaScript
+```javascript
 ;(function() {
     console.log('Hello World');
 })();
@@ -294,7 +294,7 @@ Classe non?
 
 Si l’on éxecute le code suivant, quel en sera le résultat selon vous?
 
-```
+```javascript
 var wtf = function() {
     console.log(4.6 + 5.3);
 }();
