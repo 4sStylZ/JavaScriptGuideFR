@@ -282,12 +282,13 @@ Classe non?
 
 ####Le wrapper de fonctionnalitées parfait.
 
-* 1) Pour ne pas hériter de toutes les variables déclarées en global ou que notre propre code soit perturbé par du code externe on commence par déclarer notre code dans une IIFE.
-* 2) On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
-* 3) On utilise la norme ECMAScript5 avec `use script`;
+* Pour ne pas hériter de toutes les variables déclarées en global ou que notre propre code soit perturbé par du code externe on commence par déclarer notre code dans une IIFE.
+* On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
+* On utilise la norme ECMAScript5 avec `use script`;
 
 ```javascript
 ;(function() {
+    'use strict';
     console.log('Hello World');
 })();
 ```
