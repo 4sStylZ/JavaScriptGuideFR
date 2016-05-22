@@ -225,7 +225,54 @@ Un exemple :
 
 ####Les callback.
 Un callback est une fonction passée en paramètre d’une autre fonction.
-**WIP**
+C’est une notion très importante qui permet de gérer de nombreux problèmes.
+
+Voici trois exemples de callback :
+
+* `document.onclick = maFonction();`
+* `document.onclick = "maFonction()";`
+* `document.onclick = maFonction;`
+
+Le premier exemple est tout simplement faux. Il introduis une confusion en mélangeant les deux façon de gérer les callback.
+Le second éxemple fonctionne mais il est déprecié car c’est par un `eval()` qu’est interpretée la chaîne de caractère.
+Le troisième exemple est la syntaxe conseillé : Pour passer une fonction à une autre fonction, on utilise pas de parenthèses.
+Mais alors comment passer des paramètres de manière propre?
+
+Pour cela, la technique est d’englober l’appel de la fonction de rappel dans une fonction anonyme.
+Cette fonction anonyme étant définie au moment de l’affectation, elle correspond donc à une référence à une fonction et non à une exécution de celle-ci :
+
+```javascript
+/**
+ * Déclaration d’une fonction permettant d’afficher le nom complet en fonction
+ * du nom de famille et du prénom.
+ *
+ * @param  {string}   firstName Prénom
+ * @param  {string}   lastName  Nom de famille
+ * @param  {Function} callback  Fonction qui sera appellée après l’affichage
+ *                              du nom complet.
+ *
+ * @return {void}
+ */
+function fullName(firstName, lastName, callback) {
+    console.log("My name is " + firstName + " " + lastName);
+
+    // Appel de la méthode de callBack.
+    callback(lastName);
+}
+
+// Appel de la fonction permettant d’affichant le nom complet.
+fullName(
+    "Jackie",
+    "Chan"  ,
+    // Après cette affichage, on devra lancer le callback suivant avec un
+    // paramètre qui sera lancé par la fonction fullName.
+    function(ln) {
+        console.log('Welcome Mr. ' + ln);
+    }
+);
+```
+
+Ou alors, on utilise une closure…
 
 ####Les closures.
 Une closure est une fonction qui fait appel à une ressource n’étant pas un paramètre de la fonction.
