@@ -225,6 +225,7 @@ Un exemple :
 
 ####Les callback.
 Un callback est une fonction passée en paramètre d’une autre fonction.
+**WIP**
 
 ####Les closures.
 Une closure est une fonction qui fait appel à une ressource n’étant pas un paramètre de la fonction.
@@ -280,9 +281,10 @@ Classe non?
 ###Tips & bonnes pratiques.
 
 ####Le wrapper de fonctionnalitées parfait.
-1) Pour ne pas hériter de toutes les variables déclarées en global ou que notre propre code soit perturbé par du code externe on commence par déclarer notre code dans une IIFE.
-2) On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
-3) On utilise la norme ECMAScript5 avec `use script`;
+
+* 1) Pour ne pas hériter de toutes les variables déclarées en global ou que notre propre code soit perturbé par du code externe on commence par déclarer notre code dans une IIFE.
+* 2) On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
+* 3) On utilise la norme ECMAScript5 avec `use script`;
 
 ```javascript
 ;(function() {
