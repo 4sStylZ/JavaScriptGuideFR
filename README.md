@@ -1,10 +1,10 @@
 # JavaScriptGuideFR
-JavaScriptGuideFR ≥ console.log('coin coin');
+**JavaScriptGuideFR ≥ console.log('coin coin');**
 
-###Un peu d’histoire.
+### Un peu d’histoire.
 JavaScript a été inventé par NetScape dans le but de créer un langage de script inspiré de Java mais rendu plus simple en syntaxe. Il a été placé dans le navigateur en 1995. Microsoft a tenté de concurencer ce langage de script avec JScript. Aujourd’hui encore JavaScript est une marque.
 
-###Les normes.
+### Les normes.
 En 1999 le normage de JavaScript a été demandé à la société Ecma. C’est pourquoi on utilise depuis les normes ECMAScript.
 
 Ces normes ont une forte importance car elles permettent l’implémentation de nouvelles fonctionnalitées des langages modernes dans tous les moteurs JavaScript, qu’ils soient dans les navigateurs ou server-side.
@@ -13,18 +13,18 @@ Aujourd’hui, les navigateurs comme Chrome, Firefox et Edge étendent peu à pe
 
 Beaucoup de bibliothèques logicielles modernes très utilisé ont étées reprises en natif dans JavaScript graçe aux normes ECMAScript.
 
-Si vous souhaitez savoir si une fonctionnalitée est compatible avec un navigateur ou un autre, alors dirigez-vous sur cet excellent tableau comparatif : 
+Si vous souhaitez savoir si une fonctionnalitée est compatible avec un navigateur ou un autre, alors dirigez-vous sur cet excellent tableau comparatif :
 http://kangax.github.io/compat-table/es6/
 
-###Le mode strict.
+### Le mode strict.
 L’un des autres apports d’ECMAScript est le mode strict.
-Pour l’utiliser, il suffit de saisir l’instruction suivante : 
+Pour l’utiliser, il suffit de saisir l’instruction suivante :
 `'use strict';`
 
 Ce mode active la norme ECMAScript5 et permet entre autre d’activer des logs de warnings dans la console en cas de comportement dépréciés ou d’usage de variable non définie.
 Utiliser cette instruction pourrait ou devrait être appellée au plus haut niveau d’une application.
 
-###Les types d’élements.
+### Les types d’élements.
 JavaScript possède deux catégories de variables :
 
 * Les types primitifs :
@@ -44,7 +44,7 @@ On peut donner à un objet des propriétés ou des méthode si la propriété es
 ###Le scope (portée des déclarations).
 Dans JavaScript, on doit déclarer les variables avant de les utiliser (si l’on suis la norme ECMAScript).
 
-Cela se fait grace de la sorte : 
+Cela se fait grace de la sorte :
 
 ```javascript
 var myString  = 'test';
@@ -68,7 +68,7 @@ Une variable est donc globale (en fait précisemment, elle est déclarée dans t
  */
 function *girlInteractions() {
 
-    // Variable locale.
+    // Variable locale.
     var levelOfDisapointement;
 
     // Renvoie du niveau de déception pour chaque nouvelle interaction.
@@ -100,7 +100,7 @@ console.log(levelOfDisapointement);
 
 ```
 
-Deuxième exemple : On peut constater que la portée d’une variable est étendue dans toute sa fonction et non dans son bloc.
+Deuxième exemple : On peut constater que la portée d’une variable est étendue dans toute sa fonction et non dans son bloc.
 
 ```javascript
 (function(){
@@ -117,7 +117,7 @@ Deuxième exemple : On peut constater que la portée d’une variable est éten
 console.log(mySecondeGlobale);
 ```
 
-Troisième exemple : On peut utiliser une variable avant de l’avoir déclarer.
+Troisième exemple : On peut utiliser une variable avant de l’avoir déclarer.
 Cet usage doit être banni car il entretien la confusion.
 
 ```javascript
@@ -136,21 +136,21 @@ var myGlobal = 'test';
 
 ```
 
-###Window / this.
+### Window / this.
 `Window` est par défaut l’objet courrant de la fenêtre. Cet objet contient de nombreux objets que l’on peut débugguer graçe à `console.log(window);`.
 
 Il est accessible par window mais aussi par this.window quand on le scope courant n’est pas une fonction.
 
 Le BOM (Browser object model) est décrit entièrement dans l’objet window.
 
-###Les prototypes.
+### Les prototypes.
 Chaque objet JavaScript possède un prototype qui lui même est un objet.
 Chaque objet hérite des propriétées et méthodes de son prototype, et aussi du prototype de ses parents.
 
 Un autre exemple, on peut aussi voir aussi le prototype d’un Array de la sorte :
 `console.log(window.Array.prototype);`
 
-Prenons l’exemple suivant dans une console JavaScript : 
+Prenons l’exemple suivant dans une console JavaScript :
 
 ```javascript
 /**
@@ -205,9 +205,9 @@ J’aurai pu aussi ajouter directement la méthode à l’objet final, ou ajoute
 
 Les prototypes peuvent nous aider à créer de mécanismes d’héritages.
 
-###Les fonctions.
+### Les fonctions.
 
-####IIFE
+#### IIFE
 En JavaScript, une fonction anonyme ou non qui s’appelle elle-même immédiatement se nomme une IIFE pour «Immediately-Invoked Funtion Expression».
 
 Les avantages :
@@ -235,7 +235,7 @@ Voici trois exemples de callback :
 
 Le premier exemple est tout simplement faux. Il introduis une confusion en mélangeant les deux façon de gérer les callback.
 Le second éxemple fonctionne mais il est déprecié car c’est par un `eval()` qu’est interpretée la chaîne de caractère.
-Le troisième exemple est la syntaxe conseillé : Pour passer une fonction à une autre fonction, on utilise pas de parenthèses.
+Le troisième exemple est la syntaxe conseillé : Pour passer une fonction à une autre fonction, on utilise pas de parenthèses.
 Mais alors comment passer des paramètres de manière propre?
 
 Pour cela, la technique est d’englober l’appel de la fonction de rappel dans une fonction anonyme.
@@ -282,7 +282,7 @@ http://openclassrooms.com/courses/les-closures-en-javascript
 Voici un exemple d’un code dont le métier est buggué :
 
 ```javascript
-// IIFE qui est censé afficher les nombres de i à 10;
+// IIFE qui est censé afficher les nombres de i à 10;
 (function() {
     for (var i = 0; i < 10; i++) {
         setTimeout(function() {
@@ -294,7 +294,7 @@ Voici un exemple d’un code dont le métier est buggué :
 
 Mais par quelle sorcellerie mon pointeur se perd et n’est pas incrémenté?
 
-Voilà le comportement détaillé du code :
+Voilà le comportement détaillé du code :
 
 * On déclare une fonction.
 * On lance une boucle de i à 10 tout en créant la variable i pour tout le scope de la fonction.
@@ -305,7 +305,7 @@ Voilà le comportement détaillé du code :
 Résolvons ce problème avec une closure :
 
 ```javascript
-// IIFE qui vas afficher les nombres de 0 à 9 avec une fonction closure;
+// IIFE qui vas afficher les nombres de 0 à 9 avec une fonction closure;
 (function() {
     for (var i = 0; i < 10; i++) {
         (function(savedIValue) {
@@ -315,7 +315,7 @@ Résolvons ce problème avec une closure :
 })();
 ```
 
-Voilà le comportement détaillé du code :
+Voilà le comportement détaillé du code :
 
 * On déclare une fonction.
 * On lance une boucle de i à 10 tout en créant la variable i pour tout le scope de la fonction.
@@ -353,7 +353,7 @@ Le problème est que ce code utilise beaucoup de niveau d’imbrication (nested 
 On appelle ce problème «The Pyramid of doom» https://www.wikiwand.com/en/Pyramid_of_doom_(programming)
 
 C’est pourquoi Kris Kowal à inventé une bibliothèque JavaScript nommée «Q». https://github.com/kriskowal/q
-Avec la library «Q» qui est l’un des moyens d’implémenter des promises, nous programmerons de la sorte : 
+Avec la library «Q» qui est l’un des moyens d’implémenter des promises, nous programmerons de la sorte :
 
 ```javascript
 Q.fcall(promisedStep1)
@@ -378,9 +378,9 @@ En conclusion, les promises permettent
 * De concevoir un code avec un niveau d’imbrication faible.
 * De catcher les erreurs de manière simple.
 
-###Tips & bonnes pratiques.
+### Tips & bonnes pratiques.
 
-####Le wrapper de fonctionnalitées parfait.
+#### Le wrapper de fonctionnalitées parfait.
 
 * Pour ne pas hériter de toutes les variables déclarées en global ou que notre propre code soit perturbé par du code externe on commence par déclarer notre code dans une IIFE.
 * On commence la première ligne de notre script par un `;`. De la sorte, on évite qu’une instruction d’un script externe du dom ne puisse faire planter notre code.
@@ -393,7 +393,7 @@ En conclusion, les promises permettent
 })();
 ```
 
-####Le Floating-point Guide.
+#### Le Floating-point Guide.
 
 Si l’on éxecute le code suivant, quel en sera le résultat selon vous?
 
@@ -406,7 +406,7 @@ var wtf = function() {
 Cela est du à la manière dont JavaScript intéroge le processeur pour faire ses calculs.
 
 De ce fait, méfiance avec la moindre addition. Il faut soit utiliser des arrondis manuels, soit utiliser des typages de variables monétaires.
-Des tips : http://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+Des tips : http://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
 
 ___________________
 
