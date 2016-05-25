@@ -1,5 +1,5 @@
-# JavaScriptTutorialFR
-JavaScriptTutorialFR ≥ console.log('coin coin');
+# JavaScriptGuideFR
+JavaScriptGuideFR ≥ console.log('coin coin');
 
 ###Un peu d’histoire.
 JavaScript a été inventé par NetScape dans le but de créer un langage de script inspiré de Java mais rendu plus simple en syntaxe. Il a été placé dans le navigateur en 1995. Microsoft a tenté de concurencer ce langage de script avec JScript. Aujourd’hui encore JavaScript est une marque.
@@ -407,3 +407,8 @@ Cela est du à la manière dont JavaScript intéroge le processeur pour faire se
 
 De ce fait, méfiance avec la moindre addition. Il faut soit utiliser des arrondis manuels, soit utiliser des typages de variables monétaires.
 Des tips : http://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+
+___________________
+
+Si vous êtes curieux, voici une vidéo présentant de nombreux sujets JavaScript, dont certains sont abordés ici mais avec bien plus d’humour et un orateur de choix!
+https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
