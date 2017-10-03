@@ -1,10 +1,13 @@
 # JavaScriptGuideFR
+
 **JavaScriptGuideFR ≥ console.log('coin coin');**
 
 ### Un peu d’histoire.
+
 JavaScript a été inventé par NetScape dans le but de créer un langage de script inspiré de Java mais rendu plus simple en syntaxe. Il a été placé dans le navigateur en 1995. Microsoft a tenté de concurencer ce langage de script avec JScript. Aujourd’hui encore JavaScript est une marque.
 
 ### Les normes.
+
 En 1999 le normage de JavaScript a été demandé à la société Ecma. C’est pourquoi on utilise depuis les normes ECMAScript.
 
 Ces normes ont une forte importance car elles permettent l’implémentation de nouvelles fonctionnalitées des langages modernes dans tous les moteurs JavaScript, qu’ils soient dans les navigateurs ou server-side.
@@ -17,6 +20,7 @@ Si vous souhaitez savoir si une fonctionnalitée est compatible avec un navigate
 http://kangax.github.io/compat-table/es6/
 
 ### Le mode strict.
+
 L’un des autres apports d’ECMAScript est le mode strict.
 Pour l’utiliser, il suffit de saisir l’instruction suivante :
 `'use strict';`
@@ -25,6 +29,7 @@ Ce mode active la norme ECMAScript5 et permet entre autre d’activer des logs d
 Utiliser cette instruction pourrait ou devrait être appellée au plus haut niveau d’une application.
 
 ### Les types d’élements.
+
 JavaScript possède deux catégories de variables :
 
 * Les types primitifs :
@@ -137,6 +142,7 @@ var myGlobal = 'test';
 ```
 
 ### Window / this.
+
 `Window` est par défaut l’objet courrant de la fenêtre. Cet objet contient de nombreux objets que l’on peut débugguer graçe à `console.log(window);`.
 
 Il est accessible par window mais aussi par this.window quand on le scope courant n’est pas une fonction.
@@ -144,6 +150,7 @@ Il est accessible par window mais aussi par this.window quand on le scope couran
 Le BOM (Browser object model) est décrit entièrement dans l’objet window.
 
 ### Les prototypes.
+
 Chaque objet JavaScript possède un prototype qui lui même est un objet.
 Chaque objet hérite des propriétées et méthodes de son prototype, et aussi du prototype de ses parents.
 
@@ -208,6 +215,7 @@ Les prototypes peuvent nous aider à créer de mécanismes d’héritages.
 ### Les fonctions.
 
 #### IIFE
+
 En JavaScript, une fonction anonyme ou non qui s’appelle elle-même immédiatement se nomme une IIFE pour «Immediately-Invoked Funtion Expression».
 
 Les avantages :
@@ -325,7 +333,8 @@ Voilà le comportement détaillé du code :
 
 Classe non?
 
-####Les promises.
+#### Les promises.
+
 Le JavaScript est un langage qui est très performant dans un contexte d’appels non-bloquant.
 Toutes les fonctions JavaScript sont asynchrones mis à part deux fonctions. Une fonction permettant de réaliser des appels AJAX synchrones créés par Microsoft et la fonction `window.alert`
 
