@@ -46,7 +46,7 @@ Si l’objet est typé, alors il a une propriété nommée «prototype» qui est
 
 On peut donner à un objet des propriétés ou des méthode si la propriété est une fonction.
 
-###Le scope (portée des déclarations).
+### Le scope (portée des déclarations).
 Dans JavaScript, on doit déclarer les variables avant de les utiliser (si l’on suis la norme ECMAScript).
 
 Cela se fait grace de la sorte :
@@ -231,7 +231,7 @@ Un exemple :
 })('hello');
 ```
 
-####Les callback.
+#### Les callback.
 Un callback est une fonction passée en paramètre d’une autre fonction.
 C’est une notion très importante qui permet de gérer de nombreux problèmes.
 
@@ -282,7 +282,7 @@ fullName(
 
 Ou alors, on utilise une closure…
 
-####Les closures.
+#### Les closures.
 Une closure est une fonction qui fait appel à une ressource n’étant pas un paramètre de la fonction.
 
 http://openclassrooms.com/courses/les-closures-en-javascript
